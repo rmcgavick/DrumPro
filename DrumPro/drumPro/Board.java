@@ -63,8 +63,8 @@ public class Board extends JPanel implements ActionListener, KeyListener {
 		g.dispose();
 	}
 	
-	public void keyPressed(KeyEvent e) {
-		keyCode = e.getKeyCode();
+	public void keyPressed(KeyEvent efg) {
+		keyCode = efg.getKeyCode();
 		
 		// This switch statement accounts for the difference between
 		// the current note (left side of screen) and the most 
@@ -197,8 +197,5 @@ public class Board extends JPanel implements ActionListener, KeyListener {
 		repaint();
 	return;
 	}
-	
-	if(initCount == 136) 
-		System.exit(0);
 	}
 }

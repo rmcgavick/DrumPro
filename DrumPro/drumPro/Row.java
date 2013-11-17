@@ -25,7 +25,7 @@ public class Row extends JPanel {
 		  setBounds(0, yCoord, 1000, 150);
 		  setVisible(true);
 		  ImageName = jpgName;		  
-		  sound = new File("C:\\Users\\Gerrard\\Desktop\\workspace\\DrumPro\\drumPro\\sounds\\" + drum);
+		  sound = new File("/Users/rmcgavick/Documents/workspace/DrumPro/DrumPro/drumPro/sounds/" + drum);
 	}
 	
 	final Runnable play = new Runnable() {

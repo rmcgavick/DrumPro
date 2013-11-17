@@ -15,7 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Menu extends JFrame implements ActionListener, KeyListener {
+public class Menu extends JFrame implements ActionListener {
 	
 	public static String[] aryLines;
 	public static int bpm = 110;
@@ -59,37 +59,28 @@ public class Menu extends JFrame implements ActionListener, KeyListener {
 		setResizable(false);
 		setBackground(Color.black);
 		setSize(1000, 650);
-		setVisible(true);
+		setVisible(true);		
 	}
 	
-
-	public void keyPressed(KeyEvent arg0) {
-	}
-	public void keyReleased(KeyEvent arg0) {
-	}
-	public void keyTyped(KeyEvent arg0) {
-	}
 	public void actionPerformed(ActionEvent ef) {
 		if("Song1".equals(ef.getActionCommand())) {
-			file_name = "C:/Users/Gerrard/Desktop/workspace/DrumPro/drumPro/songs/Song1.txt";
-			System.out.println(file_name);
-			this.setVisible(false);
-			playSong(file_name);
-			this.setVisible(true);
-		}
-		if("Song2".equals(ef.getActionCommand())) {
-			file_name = "C:/Users/Gerrard/Desktop/workspace/DrumPro/drumPro/songs/Song2.txt";
-			System.out.println(file_name);
+			file_name = "/Users/rmcgavick/Documents/workspace/DrumPro/DrumPro/drumPro/songs/Song1.txt";
+			System.out.println(file_name); // Temp test code
 			playSong(file_name);
 		}
-		if("Song3".equals(ef.getActionCommand())) {
-			file_name = "C:/Users/Gerrard/Desktop/workspace/DrumPro/drumPro/songs/Song3.txt";
-			System.out.println(file_name);
+		else if("Song2".equals(ef.getActionCommand())) {
+			file_name = "/Users/rmcgavick/Documents/workspace/DrumPro/DrumPro/drumPro/songs/Song2.txt";
+			System.out.println(file_name); // test code
 			playSong(file_name);
 		}
-		if("Song4".equals(ef.getActionCommand())) {
-			file_name = "C:/Users/Gerrard/Desktop/workspace/DrumPro/drumPro/songs/Song4.txt";
-			System.out.println(file_name);
+		else if("Song3".equals(ef.getActionCommand())) {
+			file_name = "/Users/rmcgavick/Documents/workspace/DrumPro/DrumPro/drumPro/songs/Song3.txt";
+			System.out.println(file_name); // test code
+			playSong(file_name);
+		}
+		else if("Song4".equals(ef.getActionCommand())) {
+			file_name = "/Users/rmcgavick/Documents/workspace/DrumPro/DrumPro/drumPro/songs/Song4.txt";
+			System.out.println(file_name); // test code
 			playSong(file_name);
 		}
 	}
@@ -98,7 +89,7 @@ public class Menu extends JFrame implements ActionListener, KeyListener {
 		try {
 			ReadFile file = new ReadFile(f);
 			aryLines = file.OpenFile();
-			new DrumPro(aryLines, bpm);
+			(new DrumProThread(aryLines, bpm)).start();;
 		
 		} catch (IOException e) {
 		System.out.println(e.getMessage());

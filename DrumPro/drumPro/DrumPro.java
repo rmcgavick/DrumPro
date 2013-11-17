@@ -7,12 +7,14 @@ import javax.swing.JPanel;
 
 public class DrumPro extends JFrame {
 
+	Board board;
+	
 	public DrumPro(String[] s, int b) {
-		add(new Board(s, b));
+		board = new Board(s, b);
+		add(board);
 		
 		//setDefaultCloseOperation(javax.swing.JFrame.HIDE_ON_CLOSE);
 		setSize(1000, 650);
-		setFocusable(true);
 		setVisible(true);
 		setLayout(null);
 		setBackground(Color.black);
